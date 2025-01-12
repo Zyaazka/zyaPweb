@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d9ffd9;
+        }
+
+        .rooms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .room {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .room:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .room img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .details h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .details p {
+            font-size: 1rem;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .details button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .details button:hover {
+            background-color: #45a049;
+        }
+
+        .room-details {
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zyy Hotel</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="M6-T1.html">Pemesanan</a></li>
+                <li><a href="M3-T2.html">Kelola Kamar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="rooms">
+            <div class="room">
+                <img src="room1.png" alt="LuxuryF">
+                <div class="details">
+                    <h2>Luxury Family Delux</h2>
+                    <p>Harga IDR : 700.000</p>
+                    <button onclick="toggleDetails('luxuryFamilyDelux')">Baca Selengkapnya</button>
+                    <div id="luxuryFamilyDelux" class="room-details" style="display: none;">
+                        <p>Fasilitas: Kamar keluarga besar, Ruang tamu, Kamar mandi luas, Akses ke kolam renang, Akses internet, dan Akses layanan kamar 24 jam</p>
+                        <p>Ukuran Kamar: 70m², 2 Tempat tidur king, Sofa bed, Balkon pribadi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room">
+                <img src="room2.jpg" alt="Luxury">
+                <div class="details">
+                    <h2>Luxury Super Delux</h2>
+                    <p>Harga IDR : 500.000</p>
+                    <button onclick="toggleDetails('luxurySuperDelux')">Baca Selengkapnya</button>
+                    <div id="luxurySuperDelux" class="room-details" style="display: none;">
+                        <p>Fasilitas: Kamar singel super premium, Kolam renang pribadi, Jacuzzi, Akses internet dan Layanan kamar 24 jam.</p>
+                        <p>Ukuran Kamar: 50m², Tempat tidur king, Meja kerja, Sofa, Balkon pribadi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room">
+                <img src="room3.jpg" alt="Delux">
+                <div class="details">
+                    <h2>Single Super Delux</h2>
+                    <p>Harga IDR : 300.000</p>
+                    <button onclick="toggleDetails('singleSuperDelux')">Baca Selengkapnya</button>
+                    <div id="singleSuperDelux" class="room-details" style="display: none;">
+                        <p>Fasilitas: Kamar single premium, Akses kolam renang dan Akses internet</p>
+                        <p>Ukuran Kamar: 30m², Tempat tidur king, Meja kerja, Sofa, Kamar mandi pribadi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room">
+                <img src="room4.jpg" alt="DeluxF">
+                <div class="details">
+                    <h2>Standar Super</h2>
+                    <p>Harga IDR : 200.000</p>
+                    <button onclick="toggleDetails('standarSuper')">Baca Selengkapnya</button>
+                    <div id="standarSuper" class="room-details" style="display: none;">
+                        <p>Fasilitas: Kamar standar dengan tempat tidur king dan Akses Wi-Fi gratis.</p>
+                        <p>Ukuran Kamar: 25m², Tempat tidur king, Kamar mandi pribadi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function toggleDetails(roomId) {
+                var roomDetails = document.getElementById(roomId);
+                if (roomDetails.style.display === "none" || roomDetails.style.display === "") {
+                    roomDetails.style.display = "block";
+                } else {
+                    roomDetails.style.display = "none";
+                }
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Zyy Hotel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
